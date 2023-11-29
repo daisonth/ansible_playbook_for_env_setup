@@ -1,6 +1,6 @@
 ---
 
-- name: Automated Environment Setup using Ansible Playbook
+- name: Automated Arch Linux Environment Setup using Ansible Playbook
   hosts: localhost
   become: true
 
