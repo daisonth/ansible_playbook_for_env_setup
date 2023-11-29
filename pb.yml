@@ -1,0 +1,13 @@
+---
+
+- name: Automated Environment Setup using Ansible Playbook
+  hosts: localhost
+  become: true
+
+  vars_prompt:
+    - name: password
+      prompt: "Enter the password for the new user"
+
+  roles:
+    - { role: 'setup_user', tags: 'setup_user' }
+    - { role: 'install_packages', tags: 'install_packages' }

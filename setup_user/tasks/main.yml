@@ -1,0 +1,29 @@
+---
+
+- name: Create New User
+  user:
+    name: "{{ username }}"
+    comment: "New User"
+    groups:
+      - wheel
+      - video
+      - audio
+      - input
+      - users
+    password: "{{ password | password_hash('sha512') }}"
+    state: present
+    shell: /usr/bin/zsh
+
+
+- name: Clone .dotfiles repository
+  git:
+    repo: https://github.com/daisonth/.dotfiles.git
+    dest: /home/{{ username }}/.dotfiles
+
+
+- name: Run stow inside the cloned repository
+  command: "{{ item }}"
+  args:
+    chdir: /home/{{ username }}/.dotfiles
+  with_items:
+    - stow . 

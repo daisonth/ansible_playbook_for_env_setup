@@ -1,0 +1,20 @@
+---
+# vars file for aur
+
+dir: .aur
+
+username: thomas
+
+packages:
+  - yay
+  - cmatrix-git
+  - fzf-tab-git
+  - mission-center
+  - nnn-nerd
+  - postman-bin
+  - rar
+  - ttf-blex-nerd-font-git
+  - wired
+  - wlrctl
+  - xampp
+  - youtube-dl
